@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # Copyright 2022 XLTS.dev. All rights reserved. https://xlts.dev
+# Licensed under the MIT License.
+#
 # This script expects the authentication token to be passed as the first and only argument when being invoked. This
 # script has been tested to work in the following environments:
 #  * Linux
