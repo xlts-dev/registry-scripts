@@ -63,7 +63,7 @@ if [[ -z "${TOKEN_USER}" ]]; then
 fi
 
 # Determine the latest published version of the XLTS for AngularJS packages
-ANGULAR_VERSION="$(curl -f --silent "${REGISTRY}/@xlts.dev/${ANGULAR_PACKAGES[0]}" -H "Authorization: Bearer ${TOKEN}" | awk -F'"latest":' '{print $2}' | xargs)"
+ANGULAR_VERSION="$(curl -f --silent "${REGISTRY}/@xlts.dev/${ANGULAR_PACKAGES[0]}" -H "Authorization: Bearer ${TOKEN}" | awk -F'"latest":' '{print $2}' | cut -d'}' -f1 | cut -d',' -f1 | xargs)"
 if [[ -z "${ANGULAR_VERSION}" ]]; then
   echo "ERROR: Unable to determine the latest XLTS for AngularJS version" 1>&2
   exit 1
